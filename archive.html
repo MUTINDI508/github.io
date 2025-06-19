@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Archive</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Rebecca's Blog Archive</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="blog.html">Blog</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="archive">
+      <ul class="archive-list">
+        <li><a href="_posts/jekyll-installation.html">Jekyll Installation</a></li>
+        <li><a href="_posts/markdown-uses.html">Markdown Uses</a></li>
+        <li><a href="_posts/mermaid-js.html">Mermaid.js</a></li>
+        <li><a href="_posts/sass.html">Sass</a></li>
+        <li><a href="_posts/vibe-coding.html">Vibe Coding</a></li>
+        <li><a href="_posts/information-architecture.html">Information Architecture</a></li>
+        <li><a href="_posts/vscode-ide-config.html">VSCode IDE Config</a></li>
+        <li><a href="_posts/wsl-installation.html">WSL Installation</a></li>
+        <li><a href="_posts/wsl1-vs-wsl2.html">WSL1 vs WSL2</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rebecca's Blog. All rights reserved.</p>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const posts = document.querySelectorAll(".archive-list li");
+  const postsPerPage = 5;
+  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const paginationContainer = document.createElement("div");
+  paginationContainer.className = "pagination";
+
+  function showPage(page) {
+    posts.forEach((post, index) => {
+      post.style.display = (index >= (page - 1) * postsPerPage && index < page * postsPerPage) ? "list-item" : "none";
+    });
+    renderPagination(page);
+  }
+
+  function renderPagination(currentPage) {
+    paginationContainer.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.className = (i === currentPage) ? "active" : "";
+      btn.addEventListener("click", () => showPage(i));
+      paginationContainer.appendChild(btn);
+    }
+  }
+
+  document.querySelector("main").appendChild(paginationContainer);
+  showPage(1);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<div class="post-preview">
+    <p>Discover how Mermaid.js allows you to create diagrams and flowcharts directly from text, making documentation lively and version-control friendly. This post introduces its benefits and basic syntax.</p>
+</div>
+
+<div class="post-full-content">
+    <p>Mermaid.js is a JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions into dynamic diagrams. It's a fantastic way to create flowcharts, sequence diagrams, Gantt charts, and more, directly within your documentation or web pages without needing complex image editors.</p>
+
+    <h4>Why Use Mermaid.js?</h4>
+    <ul>
+        <li><strong>Text-Based:</strong> Define diagrams using simple, human-readable text syntax, similar to Markdown.</li>
+        <li><strong>Version Control Friendly:</strong> Since diagrams are text, they can be easily version-controlled with Git.</li>
+        <li><strong>Integration:</strong> Integrates well with Markdown files, static site generators (like Jekyll, Hugo), and various platforms (GitHub, GitLab).</li>
+        <li><strong>Accessibility:</strong> Can be easier to manage and update compared to image-based diagrams.</li>
+    </ul>
+
+    <h4>Basic Syntax Examples</h4>
+
+    <p><strong>Flowchart:</strong></p>
+    <pre>```mermaid
+graph TD
+    A[Start] --> B{Is it hot?};
+    B -- Yes --> C[Turn on AC];
+    B -- No --> D[Stay Cool];
+    C --> E[End];
+    D --> E;
+```</pre>
+
+    <p><strong>Sequence Diagram:</strong></p>
+    <pre>```mermaid
+sequenceDiagram
+    participant User
+    participant System
+    User->>System: Request data
+    System-->>User: Display data
+```</pre>
+
+    <p><strong>Gantt Chart:</strong></p>
+    <pre>```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Research    :a1, 2025-06-15, 7d
+    Design      :a2, after a1, 5d
+    section Development
+    Coding      :2025-06-25, 10d
+    Testing     :2025-07-05, 3d
+```</pre>
+
+    <h4>How to Integrate Mermaid.js</h4>
+    <p>To use Mermaid.js in your HTML, you typically include the library and then use a `div` with the class `mermaid` to contain your diagram code:</p>
+    <pre><code>&lt;script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"&gt;&lt;/script&gt;
+&lt;div class="mermaid"&gt;
+graph TD
+    A[Start] --> B[Process];
+    B --> C[End];
+&lt;/div&gt;
+&lt;script&gt;mermaid.initialize({ startOnLoad: true });&lt;/script&gt;
+</code></pre>
+
+    <p>Mermaid.js significantly enhances documentation and communication by allowing you to create complex diagrams with ease and maintainability.</p>
+</div>

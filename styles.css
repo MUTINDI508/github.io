@@ -1,0 +1,339 @@
+/* Variables for consistent styling */
+:root {
+  --bg: #f9f9f9;
+  --text: hsla(355, 33%, 61%, 0.904);
+  --border: #ccc;
+  --accent: #88bde0;
+  --accent-hover: #99000d;
+  --white: #fff;
+  --gray-light: #ddd;
+  --gray-dark: #555;
+}
+
+/* --- Base Styles & Sticky Footer Setup --- */
+html, body {
+  height: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  display: flex;          
+  flex-direction: column; 
+  min-height: 100vh;      
+}
+
+/* Main content area will grow to fill available space, pushing footer down */
+main {
+  flex: 1; 
+  padding: 0; 
+  margin: 0;  
+}
+
+/* Global heading styles */
+h1, h2, h3 {
+  color: var(--text);
+}
+
+/* --- Header & Navigation Styles --- */
+header {
+  background-color: var(--text);
+  color: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for header */
+  flex-shrink: 0;
+}
+
+/* Container for logo and nav */
+.header-content {
+  display: flex;           
+  align-items: center;     
+  justify-content: space-between; 
+  max-width: 1200px;       
+  margin: 0 auto;          
+  width: 100%;         
+}
+
+/* Styles for the logo */
+.site-logo {
+  font-family: 'Bradley Hand ITC', cursive; 
+  font-size: 2.5rem; 
+  color: var(--accent); 
+  margin: 0; 
+  padding: 0;
+  text-align: left; /* Ensure it stays left-aligned within its flex item */
+  flex-shrink: 0; 
+}
+
+/* Navigation styles */
+nav {
+  flex-grow: 1; 
+  text-align: right;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block; 
+}
+
+nav ul li {
+  display: inline-block; 
+  margin: 0 1rem;
+}
+
+nav a {
+  color: var(--gray-light);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* --- Media Queries for Mobile Optimization --- */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Stack logo and nav vertically */
+    align-items: center;   /* Center them horizontally */
+    padding: 1rem;         /* Reduce padding on smaller screens */
+  }
+
+  .site-logo {
+    font-size: 2rem; /* Make logo text slightly smaller on mobile */
+    margin-bottom: 0.5rem; /* Add some space between logo and nav */
+    text-align: center; /* Center the logo text itself */
+  }
+
+  nav {
+    width: 100%;         
+    text-align: center;  
+    margin-top: 0.5rem;  
+  }
+
+  nav ul {
+    width: 100%;           /* Make ul take full width */
+    display: block;        /* Stack nav items vertically */
+  }
+
+  nav ul li {
+    display: block;        /* Each nav item becomes a block */
+    margin: 0.5rem 0;      /* Add vertical spacing between nav items */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small phones if needed */
+  .site-logo {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* --- Section & Content Styles --- */
+section {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+
+/* Blog Post Card Styles */
+.post-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.post-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.post-card p {
+  color: var(--gray-dark);
+}
+
+/* Preview/Full Content specific styles */
+.post-card .preview-content {
+  margin-bottom: 1rem;
+}
+
+.post-card .full-article-content {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--gray-light);
+  line-height: 1.8; /* Improve readability for full content */
+}
+
+/* --- Button Styles --- */
+.button {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start; /* Aligns button to left within its container */
+  margin-top: 1rem;
+  text-decoration: none; /* Ensure buttons acting as links don't have underlines */
+  display: inline-block; /* Allows padding and margin to apply correctly */
+}
+
+.button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Adjustments for "Go Back" button within blog post */
+.post-card .go-back-button {
+  margin-left: 1rem; /* Space between "Read More" and "Go Back" */
+}
+
+
+/* --- Contact Form Styles --- */
+.contact-section {
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.contact-section p {
+  margin-bottom: 2rem;
+  color: var(--gray-dark);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--gray-dark);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Include padding in width calculation */
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* --- Pagination Styles --- */
+.pagination {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pagination a, .pagination span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--accent);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer; /* Explicitly set cursor for links */
+}
+
+.pagination a:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+.pagination .current-page {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  font-weight: bold;
+}
+
+/* --- Footer Styles --- */
+footer {
+  background-color: var(--text);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
+.archive-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.archive-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.archive-list a {
+  text-decoration: none;
+  color: var(--primary-color, #333);
+  font-weight: bold;
+}
+
+header, footer {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--primary-color, #333333);
+}
