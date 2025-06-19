@@ -4,15 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // List of blog post files.
   // In a real application, these might be fetched from an API or a generated list.
   const postList = [
-    { id: "jekyll-installation", path: "_posts/jekyll-installation.html", title: "Jekyll Installation Guide" },
-    { id: "markdown-uses", path: "_posts/markdown-uses.html", title: "Mastering Markdown: Beyond the Basics" },
-    { id: "mermaid-js", path: "_posts/mermaid-js.html", title: "Visualizing Data with Mermaid.js" },
-    { id: "sass", path: "_posts/sass.html", title: "Enhancing Your CSS Workflow with SASS" },
-    { id: "vibe-coding", path: "_posts/vibe-coding.html", title: "The Art of Vibe Coding: Creating a Productive Environment" },
-    { id: "information-architecture", path: "_posts/information-architecture.html", title: "Understanding Information Architecture for Better Websites" },
-    { id: "vscode-ide-config", path: "_posts/vscode-ide-config.html", title: "Optimizing VS Code: A Developer's Configuration Guide" },
-    { id: "wsl-installation", path: "_posts/wsl-installation.html", title: "Seamless Linux Integration: WSL Installation Guide" },
-    { id: "wsl1-vs-wsl2", path: "_posts/wsl1-vs-wsl2.html", title: "WSL1 vs. WSL2: Choosing the Right Version for Your Workflow" }
+    { id: "jekyll-installation", path: "jekyll-installation.html", title: "Jekyll Installation Guide" },
+    { id: "markdown-uses", path: "markdown-uses.html", title: "Mastering Markdown: Beyond the Basics" },
+    { id: "mermaid-js", path: "mermaid-js.html", title: "Visualizing Data with Mermaid.js" },
+    { id: "sass", path: "sass.html", title: "Enhancing Your CSS Workflow with SASS" },
+    { id: "vibe-coding", path: "vibe-coding.html", title: "The Art of Vibe Coding: Creating a Productive Environment" },
+    { id: "information-architecture", path: "information-architecture.html", title: "Understanding Information Architecture for Better Websites" },
+    { id: "vscode-ide-config", path: "vscode-ide-config.html", title: "Optimizing VS Code: A Developer's Configuration Guide" },
+    { id: "wsl-installation", path: "wsl-installation.html", title: "Seamless Linux Integration: WSL Installation Guide" },
+    { id: "wsl1-vs-wsl2", path: "wsl1-vs-wsl2.html", title: "WSL1 vs. WSL2: Choosing the Right Version for Your Workflow" }
   ];
 
   const postsPerPage = 3; // Number of posts per page

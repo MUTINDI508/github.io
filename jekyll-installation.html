@@ -1,0 +1,50 @@
+<div class="post-preview">
+    <p>Learn how to set up Jekyll, a simple, blog-aware static site generator, on your system to quickly build static websites. This guide covers the essential steps for installation and getting your first Jekyll site running.</p>
+</div>
+
+<div class="post-full-content">
+    <p>Jekyll is a static site generator that takes plain text files written in Markdown, runs them through Liquid templates, and produces a complete, static website ready to be served by Apache, Nginx, or GitHub Pages. It's an excellent tool for blogs, personal websites, and documentation sites.</p>
+
+    <h4>Prerequisites</h4>
+    <ul>
+        <li>Ruby (version 2.7.0 or higher is recommended)</li>
+        <li>RubyGems (usually comes with Ruby)</li>
+        <li>GCC and Make (for compiling native extensions, common on Linux/macOS, requires DevKit on Windows)</li>
+    </ul>
+
+    <h4>Installation Steps</h4>
+    <ol>
+        <li>
+            <strong>Install Ruby:</strong>
+            <ul>
+                <li><strong>macOS:</strong> Ruby is often pre-installed. You can use a version manager like `rbenv` or `RVM` for better control.</li>
+                <li><strong>Linux:</strong> Use your distribution's package manager (e.g., `sudo apt install ruby-full` on Debian/Ubuntu).</li>
+                <li><strong>Windows:</strong> Use <a href="https://rubyinstaller.org/downloads/" target="_blank">RubyInstaller for Windows</a>. Make sure to check the box for "Add Ruby executables to your PATH" during installation. If you're on Windows, also install the **DevKit** from RubyInstaller to compile native gems.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Install Jekyll and Bundler:</strong>
+            Once Ruby is installed, open your terminal or command prompt and run:
+            <pre><code>gem install jekyll bundler</code></pre>
+            This command installs Jekyll and Bundler, a gem manager that helps manage your project's Ruby dependencies.
+        </li>
+        <li>
+            <strong>Create a new Jekyll site:</strong>
+            Navigate to the directory where you want to create your site and run:
+            <pre><code>jekyll new my-awesome-blog</code></pre>
+            Replace `my-awesome-blog` with your desired project name. This command creates a new directory with a basic Jekyll site structure.
+        </li>
+        <li>
+            <strong>Navigate into your site:</strong>
+            <pre><code>cd my-awesome-blog</code></pre>
+        </li>
+        <li>
+            <strong>Serve the site:</strong>
+            To see your site in action, run the Jekyll server:
+            <pre><code>bundle exec jekyll serve</code></pre>
+            This command builds your site and starts a local server. You can usually view your site at `http://localhost:4000`. Jekyll will automatically recompile your site when you make changes to your files.
+        </li>
+    </ol>
+
+    <p>You now have Jekyll installed and a basic site running! You can start customizing the content, themes, and layouts to build your perfect website.</p>
+</div>
